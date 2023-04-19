@@ -18,7 +18,7 @@ jobs:
           print(platform.processor())
         shell: python
   run-windows-commands:
-    environment: prod
+    environment: test
     runs-on: windows-latest
     needs: ["run-shell-command"]
     steps:
@@ -28,4 +28,4 @@ jobs:
         run: pwd
         shell: bash
 
-#for testing
+#for testing manual triggering
