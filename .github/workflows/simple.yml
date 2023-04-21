@@ -21,11 +21,14 @@ jobs:
     environment: test
     runs-on: windows-latest
     needs: ["run-shell-command"]
-    steps:
-      - name: Directory PowerShell
-        run: Get-location
-      - name: Directory Bash
-        run: pwd
-        shell: bash
+    uses: ./.github/workflows/reusable_test.yml
+    with:
+      ENVIRONMENT: something
+#    steps:
+#      - name: Directory PowerShell
+#        run: Get-location
+#      - name: Directory Bash
+#        run: pwd
+#        shell: bash
 
 #for testing manual triggering
