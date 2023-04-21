@@ -22,7 +22,7 @@ jobs:
     runs-on: windows-latest
     needs: ["run-shell-command"]
     with:
-      ENVIRONMENT: sc
+      RUN_ENVIRONMENT: sc
     steps:
       - name: Directory PowerShell
         run: Get-location
