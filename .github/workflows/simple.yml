@@ -18,12 +18,11 @@ jobs:
           print(platform.processor())
         shell: python
   run-windows-commands:
-    environment: test
     runs-on: windows-latest
     needs: ["run-shell-command"]
     uses: ./.github/workflows/reusable_test.yml
     with:
-      RUN_ENVIRONMENT: something
+      ENVIRONMENT: test
 #    steps:
 #      - name: Directory PowerShell
 #        run: Get-location
