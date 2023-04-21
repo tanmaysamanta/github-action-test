@@ -21,7 +21,7 @@ jobs:
     environment: test
     runs-on: windows-latest
     needs: ["run-shell-command"]
-    uses: ./github/workflows/reusable_test.yml
+    uses: ./.github/workflows/reusable_test.yml
     with:
       SOME: Hello
     steps:
