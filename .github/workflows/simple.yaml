@@ -18,8 +18,13 @@ jobs:
           print(platform.processor())
         shell: python
   run-windows-commands:
+    environment: nothing
     runs-on: ubuntu-latest
     needs: ["run-shell-command"]
-    uses: ./.github/workflows/reusable_test.yaml
-    with:
-      ENVIRONMENT: test
+    steps:
+      - name: echo a string
+        run: |
+          echo "Hello World here is some changes"
+#    uses: ./.github/workflows/reusable_test.yaml
+#    with:
+#      ENVIRONMENT: test
