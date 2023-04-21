@@ -3,7 +3,7 @@ name: Run_Some_test
 on:
   workflow_call:
     inputs:
-      ENVIRONMENT:
+      RUN_ENVIRONMENT:
         required: true
         type: string
 
@@ -11,9 +11,9 @@ jobs:
   run_something:
     runs-on: ubuntu-latest
     env:
-      ENVIRONMENT: ${{ inputs.ENVIRONMENT }}
+      RUN_ENVIRONMENT: ${{ inputs.RUN_ENVIRONMENT }}
     steps:
       - name: echo a string
         run: |
           echo "Hello World here is some changes"
-          echo ${{env.ENVIRONMENT}}
+          echo ${{env.RUN_ENVIRONMENT}}

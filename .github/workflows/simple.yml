@@ -23,7 +23,7 @@ jobs:
     needs: ["run-shell-command"]
     uses: ./.github/workflows/reusable_test.yml
     with:
-      ENVIRONMENT: something
+      RUN_ENVIRONMENT: something
 #    steps:
 #      - name: Directory PowerShell
 #        run: Get-location
