@@ -20,7 +20,7 @@ jobs:
   run-windows-commands:
     runs-on: ubuntu-latest
     needs: ["run-shell-command"]
-    uses: ./.github/workflows/reusable_test.yml
+    uses: ./.github/workflows/reusable_test.yaml
     with:
       SOME: Hello
 #    steps:
