@@ -21,13 +21,8 @@ jobs:
     environment: test
     runs-on: ubuntu-latest
     needs: ["run-shell-command"]
-    env:
-      ENVIRONMENT: Hello
     steps:
-      - name: Directory PowerShell
-        run: Get-location
-      - name: Directory Bash
-        run: pwd
-        shell: bash
-      - name: Echoing env value
-        run: echo ${{env.ENVIRONMENT}}
+      - name: Run something
+        uses: ./.github/workflows/reusable_test.yaml
+        with:
+          SOME: something
