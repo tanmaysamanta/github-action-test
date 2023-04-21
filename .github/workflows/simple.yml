@@ -18,9 +18,10 @@ jobs:
           print(platform.processor())
         shell: python
   run-windows-commands:
-    environment: test
     runs-on: windows-latest
     needs: ["run-shell-command"]
+    with:
+      RUN_ENVIRONMENT: sc
     steps:
       - name: Directory PowerShell
         run: Get-location
