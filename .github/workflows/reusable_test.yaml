@@ -3,15 +3,16 @@ name: Run_Some_test
 on:
   workflow_call:
     inputs:
-      SOME:
+      ENVIRONMENT:
         required: true
         type: string
 
 jobs:
   run_something:
+    environment: ${{ inputs.ENVIRONMENT }}
     runs-on: ubuntu-latest
     env:
-      SOME: ${{ inputs.SOME }}
+      ENVIRONMENT: ${{ inputs.ENVIRONMENT }}
     steps:
       - name: checkout Repo
         uses: actions/checkout@v3
@@ -19,4 +20,4 @@ jobs:
       - name: echo a string
         run: |
           echo "Hello World here is some changes"
-          echo ${{env.SOME}}
+          echo ${{env.ENVIRONMENT}}

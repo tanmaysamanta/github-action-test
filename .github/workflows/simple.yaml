@@ -18,14 +18,8 @@ jobs:
           print(platform.processor())
         shell: python
   run-windows-commands:
-    environment: test
     runs-on: ubuntu-latest
     needs: ["run-shell-command"]
-    steps:
-      - name: checkout Repo
-        uses: actions/checkout@v3
-
-      - name: Run something
-        uses: ./.github/workflows/reusable_test.yaml
-        with:
-          SOME: something
+    uses: ./.github/workflows/reusable_test.yaml
+    with:
+      ENVIRONMENT: test
